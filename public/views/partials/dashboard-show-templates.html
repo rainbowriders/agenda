@@ -1,0 +1,28 @@
+<section ng-controller="TemplatesDashboardController" id="dashboard-container">
+    <header>
+        <h1 id="dashboard-title">TEMPLATES</h1>
+    </header>
+    <section class="row" id="dashboard-search-container">
+        <section id="search-field" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+            <input type="search" class="col-md-12 col-lg-12 col-sm-12 col-xs-12" placeholder="Search by attendees' names, meeting title, location."
+                   ng-model="searchPattern" ng-change="search()">
+        </section>
+    </section>
+    <div id="dashboard-meetings-container" class="row">
+        <div class="col-md-12 dashboard-meeting-container"
+             ng-repeat="template in templates | orderBy:'-date'"
+             ng-click="openTemplate(template.uniqueStringID)">
+            <p class="meeting-title">{{template.title || 'Untitled template'}}</p>
+            <p class="meeting-date-time-place-info">
+                <span>@{{template.place || 'No chosen place'}}</span>
+            </p>
+            <p class="meeting-users">
+                <span><strong>{{template.minute_taker}}</strong></span><span ng-if="template.attendants.length > 0">, </span>
+				<span ng-repeat="att in template.attendants" ng-if="template.minute_taker_email != att.email">
+					{{att.meeting_attendant}}
+					<span ng-if="!$last">,</span>
+				</span>
+            </p>
+        </div>
+    </div>
+</section>

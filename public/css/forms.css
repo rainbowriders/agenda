@@ -1,0 +1,211 @@
+
+.forms-image-background {
+    background: url("../pics/forms-background.jpg") no-repeat;
+    background-size: cover;
+}
+.forms-shadowed-background {
+    min-height: 100vh;
+    background-color: rgba(40, 33, 44, 0.8);
+}
+.redirect-to-register-msg {
+    float: right;
+    padding-bottom: 10%;
+}
+.forms-shadowed-background .redirect-to-register-msg .new-text {
+    color: #a2a3a3;
+}
+.forms-shadowed-background .redirect-to-register-msg .new-text:hover {
+    color: white;
+}
+.forms-shadowed-background .redirect-to-register-msg .sign-up-text {
+    color: #7ab55c;
+}
+.forms-shadowed-background .redirect-to-register-msg .sign-up-text:hover {
+    color: #5E9148;
+}
+.container-with-padding {
+    padding: 0 7% 0 7%;
+}
+.form-container {
+    background-color: white;
+    padding: 25px;
+    border-radius: 5px;
+}
+.form-container .row {
+    margin: 0px;
+}
+.form-container h3 {
+    padding: 0px;
+    margin: 0px;
+    color: #414141;
+    padding-bottom: 20px;
+}
+.inputs-container {
+    padding-bottom: 15px;
+
+}
+.inputs-container input {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    padding: 20px 15px 20px 25px;
+    color: #414141;
+    border: 1px solid #999999;
+    border-radius: 3px;
+    background-color: white !important;
+}
+.inputs-container input:-webkit-autofill {
+    background-color: white !important;
+}
+.inputs-container input.input-with-errors {
+    background: url("../pics/error-forms.png") 97% 50% no-repeat;
+    border-top: 1px solid #C13527;
+    border-left: 1px solid #C13527;
+    border-right: 1px solid #C13527;
+    border-bottom: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.inputs-container label {
+    margin: -42px 0 0 25px;
+    padding: 0px;
+    position: absolute;
+    font-size: 16px;
+    color: #666666;
+}
+.inputs-container label.small-label {
+    font-size: 12px;
+    margin: -60px 0 0 25px;
+}
+.inputs-container .input-error-message {
+    display: block;
+    width: 100%;
+    padding: 5px 0 5px 25px;
+    background-color: #FFD3D3;
+    border-top: none;
+    border-left: 1px solid #C13527;
+    border-right: 1px solid #C13527;
+    border-bottom: 1px solid #C13527;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    color: #C13527;
+}
+.inputs-container .btn {
+    background-color: #7ab55c;
+    color: white;
+    width: 100%;
+    font-size: 18px;
+    padding-bottom: 18px;
+    padding-top: 18px;
+}
+.inputs-container .btn:hover {
+    background-color: #5E9148;
+}
+.inputs-container .label-check-box-login,
+.inputs-container i{
+    display: inline-block;
+    vertical-align: middle;
+    color: #414141;
+}
+.inputs-container .label-check-box-login:hover,
+.inputs-container i:hover{
+    cursor: pointer;
+}
+.inputs-container .label-check-box-login {
+    font-size: 16px;
+}
+.inputs-container .fa-square-o {
+    margin-right: 3px;
+}
+.inputs-container .login-forgot-password {
+    float: right;
+    margin-top: -40px;
+    padding-right: 10px;
+}
+.inputs-container .login-forgot-password a {
+    color: #666666;
+    font-size: 16px;
+}
+.inputs-container .login-forgot-password.login-forgot-password-with-errors {
+    padding-right: 40px;
+}
+
+.social-login {
+    padding: 0 15px;
+    margin-bottom: 10px !important;
+}
+.social-login .btn span {
+    font-size: 24px;
+    color: white;
+    vertical-align: middle;
+    display: inline-block;
+}
+.social-login .btn i {
+    margin-top: 2px;
+    margin-right: 15px;
+    color: white;
+    vertical-align: middle;
+}
+.social-login .btn-google {
+    background-color: #c33219; /* fallback color */
+    background: -moz-linear-gradient(top, #e64522, #c33219);
+    background: -ms-linear-gradient(top, #e64522, #c33219);
+    background: -webkit-linear-gradient(top, #e64522, #c33219);
+    border: 1px solid #c33219;
+    text-shadow: 0 -1px -1px #972412;
+    width: 100%;
+}
+.social-login .btn-google:hover {
+    background-color: #e64522; /* fallback color */
+    background: -moz-linear-gradient(top, #c33219, #e64522);
+    background: -ms-linear-gradient(top, #c33219, #e64522);
+    background: -webkit-linear-gradient(top, #c33219, #e64522);
+}
+.social-login .btn-facebook {
+    background-color: #2b4170; /* fallback color */
+    background: -moz-linear-gradient(top, #3b5998, #2b4170);
+    background: -ms-linear-gradient(top, #3b5998, #2b4170);
+    background: -webkit-linear-gradient(top, #3b5998, #2b4170);
+    border: 1px solid #2b4170;
+    text-shadow: 0 -1px -1px #1f2f52;
+    width: 100%;
+}
+.social-login .btn-facebook:hover {
+    background-color: #3b5998; /* fallback color */
+    background: -moz-linear-gradient(top, #2b4170, #3b5998);
+    background: -ms-linear-gradient(top, #2b4170, #3b5998);
+    background: -webkit-linear-gradient(top, #2b4170, #3b5998);
+}
+.social-login .btn-twitter {
+    background-color: #0081ce; /* fallback color */
+    background: -moz-linear-gradient(top, #00aced, #0081ce);
+    background: -ms-linear-gradient(top, #00aced, #0081ce);
+    background: -webkit-linear-gradient(top, #00aced, #0081ce);
+    border: 1px solid #0081ce;
+    text-shadow: 0 -1px -1px #005ea3;
+}
+.social-login .btn-twitter:hover {
+    background-color: #00aced; /* fallback color */
+    background: -moz-linear-gradient(top, #0081ce, #00aced);
+    background: -ms-linear-gradient(top, #0081ce, #00aced);
+    background: -webkit-linear-gradient(top, #0081ce, #00aced);
+}
+.social-login .btn-linkedin {
+    background-color: #0073b2; /* fallback color */
+    background: -moz-linear-gradient(top, #009cda, #0073b2);
+    background: -webkit-linear-gradient(top, #009cda, #0073b2);
+    border: 1px solid #0073b2;
+    text-shadow: 0 -1px -1px #005486;
+    width: 100%;
+}
+
+.social-login .btn-linkedin:hover {
+    background-color: #009cda; /* fallback color */
+    background: -moz-linear-gradient(top, #0073b2, #009cda);
+    background: -ms-linear-gradient(top, #0073b2, #009cda);
+    background: -webkit-linear-gradient(top, #0073b2, #009cda);
+}
+.social-login .fa-linkedin {
+    margin-top: -5px !important;
+}
+

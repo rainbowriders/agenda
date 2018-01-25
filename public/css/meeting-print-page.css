@@ -1,0 +1,83 @@
+@media screen {
+	.print-page-container {
+		display: none;
+	}
+}
+@media print {
+	#meeting-headers-container{
+		display: none;
+	}
+	header {
+		marign: 0px !important;
+	}
+	.print-page-container {
+		margin: 0px;
+		padding: 0px;
+		font-size: 14px;
+	}
+	.print-page-container div {
+		padding: 0px;
+		margin: 0px;
+	}
+	.print-header-table,
+	.print-header-table thead,
+	.print-header-table tbody,
+	.print-header-table td,
+	.print-header-table th,
+	.print-body-table,
+	.print-body-table thead,
+	.print-body-table tbody,
+	.print-body-table td,
+	.print-body-table th {
+		border: none !important;
+	}
+	.print-header-table thead tr th:first-child{
+		width: 150px;
+	}
+	.print-header-table thead tr th:nth-child(2){
+		font-weight: inherit;
+	}
+	.print-header-table thead tr:nth-child(2) th{
+		border-top: 1px solid black !important;
+	}
+	.print-header-table thead tr:last-child th{
+		border-bottom: 1px solid black !important;
+		vertical-align: middle;
+	}
+	.print-body-table tbody .print-agenda-items:nth-child(odd) td {
+		background-color: #EEEEEE !important;
+    	-webkit-print-color-adjust: exact;
+	}
+	.print-body-table tbody .print-agenda-items:nth-child(2) td {
+		border-top: 1px solid black !important;
+	}
+	.print-body-table tbody .print-agenda-items:last-child td {
+		border-bottom: 1px solid black !important;
+	}
+	.print-body-table tbody .print-note-header td {
+		border-bottom: 1px solid black !important;
+		padding-top: 10px;
+		padding-bottom: 5px;
+	}
+	.print-body-table tbody .print-note-header td:nth-child(1){
+		width: 5%;
+	}
+	.print-body-table tbody .print-note-header td:nth-child(2){
+		width: 15%;
+	}
+	.print-body-table tbody .print-note-header td:nth-child(3){
+		width: 60%;
+	}
+	.print-body-table tbody tr .print-notes-agenda-title {
+		background-color: #CCCECE !important;
+    	-webkit-print-color-adjust: exact;
+    	border-top: 1px solid black !important;
+	}
+	.backgrounded_notes td{
+		background-color: #EEEEEE !important;
+    	-webkit-print-color-adjust: exact;
+	}
+	#last-note td{
+		border-bottom: 1px solid black !important;
+	}
+}

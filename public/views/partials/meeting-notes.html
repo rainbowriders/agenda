@@ -1,0 +1,110 @@
+
+<header>
+    <h3>Meeting minutes</h3>
+</header>
+<section id="meeting-notes-nav" class="row">
+    <div class="col-md-3">Type</div>
+    <div class="col-md-6">Notes</div>
+    <div class="col-md-3">Owner</div>
+</section>
+<section class="row meeting-agenda-items-in-notes" ng-repeat-start="agenda in meeting.agenda">
+    <span class="numbers">{{agenda.number}}.</span>
+    <span  ng-bind-html="agenda.text | linky:'_blank'" class="headers"></span>
+</section>
+<section ng-repeat-start="note in agenda.note" class="row agenda-notes-item">
+    <div class="col-md-3">
+        <div class="numbers"></div>
+        <div class="note-number">{{agenda.number}}.{{$index}}</div>
+        <div class="note-type-container">
+            <div class="dropdown" style="padding: 0px;">
+                <span style="width: 100%; text-align: left;padding: 0px; border: none" class="btn btn-default dropdown-toggle"
+                          id="dropdownMenu1 noteTypeDropdownBtn"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="true"
+                        ng-click="stopInterval()">
+                    {{note.type.title}}
+                    <span class="caret pull-right" style="margin-top: 8px;" ng-click="stopInterval()" ng-if="userIsMinuteTaker"></span>
+                </span>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="noteTypeDropdownItems" ng-if="userIsMinuteTaker">
+                    <li ng-repeat="type in types"
+                        ng-click="updateNoteType(type.title, note.id); note.type.title = type.title">{{type.title}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 notes-body-container">
+        <textarea rows="1" msd-elastic
+        ng-model="note.body"
+        ng-blur="updateNoteBody(note.body, note.id)"
+        ng-if="userIsMinuteTaker"
+        ng-click="stopInterval()"
+        ng-focus="stopInterval()"></textarea>
+    </div>
+    <div class="col-md-6 notes-body-container" ng-if="!userIsMinuteTaker">
+        <span> {{ note.body }}</span>
+    </div>
+    <div class="col-md-3 note-owner-container">
+        <div class="col-md-10">
+            <input type="text"
+                ng-model="note.ownerNames"
+                ng-blur="updateNoteOwnerNames(note.ownerNames, note.id)"
+                ng-disabled="!userIsMinuteTaker"
+                uib-typeahead="att as att.meeting_attendant for att in meeting.attendants | filter: $viewValue"
+                ng-click="stopInterval()"
+                ng-focus="stopInterval()">
+        </div>
+        <div class="col-md-2">
+            <i class="fa fa-times" ng-click="deleteNote(note, agenda)" ng-hide="!userIsMinuteTaker"></i>
+        </div>
+    </div>
+</section>
+
+<section ng-repeat-end></section>
+<section class="row new-agenda-item-in-notes" ng-if="userIsMinuteTaker">
+    <div class="col-md-3">
+        <div class="numbers"></div>
+        <div class="new-note-number">{{agenda.number}}.{{agenda.note.length || 0}}</div>
+        <div class="note-type-container">
+            <div class="dropdown">
+                <span style="width: 100%; text-align: left;padding: 0px; border: none"
+                      class="btn btn-default dropdown-toggle"
+                      id="dropdownMenu1 noteTypeDropdownBtn"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="true"
+                      ng-click="stopInterval()">
+                    {{newAgendaNoteItem[agenda.id].title}}
+                    <span class="caret pull-right" style="margin-top: 8px;" ng-click="stopInterval()"></span>
+                </span>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="noteTypeDropdownItems" ng-if="userIsMinuteTaker">
+                    <li ng-repeat="type in types"
+                        ng-click="newAgendaNoteItem[agenda.id].title = type.title">{{type.title}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6" id="newAgendaNoteBodyContainer">
+        <input type="text" class="col-md-12"
+        ng-model="newAgendaNoteItem[agenda.id].body"
+        placeholder="Type here to add new note to agenda item # {{agenda.number}}"
+        style="{{newAgendaNoteItem[agenda.id].bodyRequired}}"
+        id="new-note-text{{agenda.id}}"
+        ng-disabled="!userIsMinuteTaker"
+        ng-keypress="addNewAgendaNoteItem($event, agenda, $index)"
+        ng-click="stopInterval()"
+        ng-focus="stopInterval()">
+    </div>
+    <div class="col-md-3" id="newAgendaNoteOwnerContainer">
+        <input type="text"
+        ng-model="newAgendaNoteItem[agenda.id].ownerNames"
+        placeholder="Owner"
+        ng-keypress="addNewAgendaNoteItem($event, agenda, $index)"
+        ng-disabled="!userIsMinuteTaker"
+        ng-blur="addNewAgendaItemAfterTabPress(agenda, $index)"
+        uib-typeahead="att as att.meeting_attendant for att in meeting.attendants | filter: $viewValue"
+        ng-click="stopInterval()"
+        ng-focus="stopInterval()">
+    </div>
+</section>
+<section ng-repeat-end></section>

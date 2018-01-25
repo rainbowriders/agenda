@@ -1,0 +1,109 @@
+.navbar {
+    background-color: white;
+    padding-top: 10px;
+    min-height: 70px;
+}
+
+.navbar .container .navbar-brand {
+    display: inline-block;
+    padding: 0 0 0 10px;
+}
+.navbar-brand {
+    margin-left: 0px !important;
+}
+.navbar-brand img {
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 0px;
+    width: 50px;
+}
+.navbar-brand span {
+    font-size: 16px;
+    color: #333333;
+}
+#new-meeting-button {
+    background-color: rgb(26, 182, 103);
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 15px 35px;
+    border-radius: 1px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+#new-meeting-button:hover {
+    cursor: pointer;
+}
+#new-meeting-button i {
+    margin-right: 5px;
+    font-size: 20px;
+}
+#navbar-right-dropdown a {
+    padding: 0px;
+}
+.navbar-right {
+    margin-right: 0px !important;
+}
+#navbar-user-names{
+    font-size: 16px;
+    vertical-align: middle;
+    display: inline-block;
+    color: #333333;
+}
+#navbar-user-avatar {
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+#chafka {
+    display: inline-block;
+    margin-left: 5px;
+}
+#navbar-help-page-icon:hover{
+    cursor: pointer;
+}
+#navbar-help-page-icon img{
+    margin-left: 10px;
+}
+.dropdown-toggle {
+    background-color: white !important;
+}
+.dropdown-menu {
+    background-color: #F0F4F5;
+    box-shadow: none;
+    border: none;
+    z-index: 10001;
+    border-bottom: 1px solid #CCCED0;
+    padding: 0px;
+}
+.dropdown-menu li {
+    padding-left: 20px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-bottom: 1px solid rgb(235, 238, 238);
+}
+.dropdown-menu li a {
+    font-size: 16px;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+.dropdown-menu li a:hover {
+    background-color: rgb(36, 36, 255);
+    color: white;
+}
+.dropdown-menu li:hover {
+    /*background-color: rgb(36, 36, 255);*/
+    background-color: #2424FF;
+    color: white;
+}
+.dropdown-menu li:hover a {
+    color: white !important;
+}
+.dropdown-menu li a i {
+    display: inline-block;
+}
+.padded-navbar-dropdown-item a span {
+    display: inline-block;
+    padding-top: 15px;
+}

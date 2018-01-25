@@ -1,0 +1,226 @@
+#meeting-headers-container header {
+    margin-top: 70px;
+    padding: 40px 0;
+}
+/*#meeting-headers-container header h1 {*/
+    /*font-size: 40px;*/
+    /*margin: 0 0;*/
+    /*padding: 0;*/
+/*}*/
+/*#meeting-meeting-title {*/
+    /*padding: 21px 15px;*/
+    /*background-color: #FAFAFA;*/
+    /*margin: 0px;*/
+    /*border: 1px solid rgb(235, 238, 238);*/
+/*}*/
+#owner-title {
+    padding: 0 15px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+#meeting-meeting-title  h3 {
+    font-size: 28px;
+    padding: 0px;
+    margin: 0px;
+}
+
+#meeting-date-place-container {
+    padding: 25px 0;
+    margin-bottom: 10px;
+}
+#meeting-date-place-container div:first-child {
+    padding: 15px 30px 25px 30px;
+}
+#meeting-date-place-container div span {
+    font-size: 14px;
+    color: #666666;
+    display: inline-block;
+}
+#meeting-date-place-container .show-date-time-title,#meeting-date-place-container .show-end-time-title {
+    margin-right: 10px;
+    margin-top: 10px;
+}
+#meeting-date-place-container .show-date-time-title:hover,
+#meeting-date-place-container .show-end-time-title:hover,
+#meeting-date-place-container .show-start-time-title:hover {
+    cursor: pointer;
+}
+.date-picker {
+    display: inline-block;
+    position: absolute;
+    z-index: 10111;
+    top:30px;
+    left: 0px;
+    background-color: #F0F4F5;
+}
+.date-picker div {
+    background-color: #F0F4F5;
+    margin: 0px;
+}
+.start-time-picker,
+.end-time-picker{
+    display: inline-block;
+    position: absolute;
+    z-index: 10111;
+    top:30px;
+    left: 0px;
+    padding: 15px 30px;
+    background-color: #F0F4F5;
+    border-bottom: 1px solid #CCCED0;
+    text-align: center;
+}
+.start-time-picker .btn,
+.end-time-picker .btn{
+    color: white !important;
+}
+.end-time-picker {
+    top: 30px    ;
+    left: 52px;
+}
+#time-zone-dropdown-btn {
+    border: none;
+    margin-right: 10px;
+    color: #666666;
+    padding-bottom: 0px;
+    margin-top: -10px;
+}
+@media screen and (max-width: 500px){
+    #time-zone-dropdown-btn {
+        margin-top: 0;
+    }
+}
+#time-zone-dropdown {
+    position: absolute;
+    background-color: #F0F4F5;
+    list-style-type: none;
+    padding: 0px;
+    margin-top: 22px;
+    height: auto;
+    max-height: 300px;
+    overflow-x: hidden;
+    border-bottom: 1px solid #CCCED0;
+    z-index: 10000;
+}
+#time-zone-dropdown li {
+    font-size: 14px;
+    display: block;
+    border-bottom: 1px solid rgb(235, 238, 238);
+    white-space: nowrap;
+    padding: 10px 15px;
+}
+#time-zone-dropdown li:hover {
+    cursor: pointer;
+    background-color: rgb(36, 36, 255);
+    color: white;
+}
+#at-place-holder, #meeting-place-title {
+    font-size: 14px;
+    color: #666666;
+}
+#meeting-place-title {
+    border: none;
+}
+#inner-meeting-data-container {
+    border: 1px solid rgb(235, 238, 238);
+    margin: 0 15px;
+}
+
+#meeting-title input, #meeting-title span {
+    border: none;
+    padding: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #F1F4F5;
+    max-width: 100%;
+}
+#meeting-title input:focus {
+    outline: none;
+}
+#meeting-minute-taker input, #meeting-minute-taker span {
+    display: block;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100% - 30px);
+    padding: 15px;
+    font-size: 14px;
+    color: #333333;
+    border: 1px solid rgb(235, 238, 238);
+}
+#meeting-minute-taker span {
+    padding: 5px 15px 0 0;
+    border: none;
+}
+#meeting-minute-taker input:focus {
+    outline: none;
+}
+#meeting-attendees {
+    margin-top: 30px;
+}
+#meeting-attendees h3 {
+    margin: 0px;
+    padding: 0px;
+    margin-left: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+tags-input input:focus {
+    outline: none !important;
+}
+input:focus {
+    outline: none !important;
+}
+#tags-input {
+    width: calc(100% - 30px);
+    margin-left: 15px;
+    min-height: 45px;
+    line-height: 45px;
+}
+#start_time_dropdown-container,
+#end_time_dropdown-container{
+    display: inline-block;
+    font-size: 14px;
+}
+#start_time_dropdown-container input,
+#end_time_dropdown-container input{
+    padding: 0px 5px;
+    border: 0px;
+    width: 50px;
+    color: #666666;
+}
+#start_time_dropdown-container ul,
+#end_time_dropdown-container ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    height: 150px;
+    overflow-y: auto;
+    width: 100px;
+    position: absolute;
+    z-index: 10010;
+    background-color: #F1F4F5;
+}
+#start_time_dropdown-container ul li,
+#end_time_dropdown-container ul li{
+    padding: 2px 15px;
+    border-bottom: 1px solid rgb(235, 238, 238);
+}
+#start_time_dropdown-container ul li:hover,
+#end_time_dropdown-container ul li:hover {
+    cursor: pointer;
+    background-color: rgb(36, 36, 255);
+    color: white;
+}
+#end_time_dropdown-container ul {
+    width: 180px;
+}
+
+#attendees-attendant-view {
+    padding: 10px 15px;
+    font-size: 14px;
+    color: black;
+}
+.single-text-att {
+    margin-right: 10px;
+}

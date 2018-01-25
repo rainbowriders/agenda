@@ -1,0 +1,21 @@
+<section id="send-confirmation-code-page-container" ng-controller="SendConfirmationCodeController">
+	<section id="forms-logo-container" class="text-center m-b">
+		<img src="../../pics/rr-circle-logo.png" style="height:50px;margin-right:10px;">
+			<span style="color:#788188">Rainbow Minutes</span>
+	</section>
+	<form name="login-form" ng-submit="sendNewConfirmationCode()">
+		<div class="form-group">
+			<input type="email" class="form-control" id="inputEmail" placeholder="Email"
+				ng-model="email" focus="true">
+		</div>
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary btn-success btn-lg" style="font-size:1.3em;border-radius:50px;background-color: #1AB667 ">Send new confirmation code</button>
+		</div>
+		<div class="list-group auto m-b-sm m-b-lg">
+			<a href="/" class="list-group-item">
+				<a href="/app#/login" class="list-group-item">
+				<i class="fa fa-chevron-left icon-muted"></i> <span style="font-weight: bold; font-size: 1.2em;">Back</span>
+			</a>
+        </div>
+	</form>
+</section>

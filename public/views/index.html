@@ -1,0 +1,503 @@
+<div ng-controller="IndexPageController" id="front-page">
+
+    <!--NAVBAR-->
+    <nav class="navbar navbar-default navbar-fixed-top" id="front-page-navbar">
+        <div class="container">
+
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+
+            <div id="navbar" class="navbar-collapse collapse">
+
+                <ul class="nav navbar-nav">
+                    <li ng-click="goHome()"><a href="" id="home-slide-link">home</a></li>
+                    <li ng-click="goAbout()"><a href="" id="about-slide-link">about</a></li>
+                    <li ng-click="goFeatures()"><a href="" id="features-slide-link">features</a></li>
+                    <li ng-click="goContact()"><a href="" id="contact-form-link">contact</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#/login">sign in</a></li>
+                    <li><a href="#/register" class="sign-up-btn-nav">sign up</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <!--END NAVBAR-->
+
+
+    <!--HOME SLIDER-->
+    <div id="home-slide">
+        <div class="home-slide-shadowed-background">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 text-center logo-container">
+                        <img src="pics/logo.png" alt="">
+                        <h1 class="text-capitalize">rainbow agenda</h1>
+                    </div>
+
+                </div>
+
+                <div class="row meet-note-share">
+                    <p class="col-md-12 col-lg-12 text-center text-uppercase">meet, note, share!</p>
+                </div>
+
+                <div class="row take-notes">
+                    <p class="col-md-12 col-lg-12 text-center text-capitalize">Take Notes Online For All Kinds Of Meetings. It Has Never Been That Easy. Give It A Try!</p>
+                </div>
+
+                <div class="col-md-12 col-lg-12 text-center text-uppercase enter-btn">
+                    <span ng-click="start()">enter rainbow agenda</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--END HOME SLIDER-->
+
+    <!--ABOUT SLIDER-->
+
+
+    <div id="about-slide">
+        <div class="container">
+
+            <div class="row">
+                <h1 class="text-left text-capitalize col-md-12 col-lg-12 about-header">about rainbow agenda</h1>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 about-text-container">
+
+                <p>Rainbow Agenda encompasses all the pre-meeting preparations, the meeting processes and the post-meeting follow-up!</p>
+                <p>Start from inviting your colleagues, business partners or friends to join online! Create an agenda and let communication flow with clearly marked agenda items.</p>
+                <p>Agenda is not limited to a specific target audience. Take notes online for your meeting, lectures, conferences, you name it. </p>
+                <p>At the end, you can send the whole information to all participants’ e-mails and you will have the notes both online and on your e-mail. Secure, isn't it?</p>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 about-image-container">
+                <img src="pics/laptop-second-slide.png" alt="" class="img-responsive">
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--END ABOUT SLIDER-->
+
+    <!--RUN SLIDE-->
+    <div id="run-slide">
+        <div class="run-slide-shadowed-background">
+
+            <div class="row">
+                <h1 class="text-capitalize text-center">run a great</h1>
+            </div>
+
+            <div class="row">
+                <h1 class="text-capitalize text-center">virtual meeting!</h1>
+            </div>
+
+        </div>
+    </div>
+
+    <!--END RUN SLIDE-->
+
+
+    <!--FUTURES SLIDE-->
+    <div id="features-slide">
+        <div class="container">
+
+            <div class="row">
+                <h1 class="text-center text-capitalize features-title">rainbow agenda features</h1>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 features-img-container">
+                    <img src="pics/phone-features.png" alt="" class="img-responsive">
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 features-list-container">
+                    <ul>
+                        <li>
+                            <strong>Manage Meetings</strong>
+                            <p>Book your recurring meetings in advance and forget about sending reminders or setting up a new meeting every week.</p>
+
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <strong>Manage Attendees</strong>
+                            <p>Quickly add or remove attendees with minimal effort.</p>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <strong>Manage Agendas</strong>
+                            <p>Prepare agenda items in a simple and visually pleasing way. Copyprevious agenda topics that have not been discussed or need further clarification.</p>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <strong>Send Invitations</strong>
+                            <p>Set automatic invitations. Minus one responsibility!</p>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <strong>Take Notes</strong>
+                            <p>Note the next step under each agenda item and label it for your own convenience. Is it something that needs more research? Is it an idea?</p>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <strong>Send Memo To All Attendees</strong>
+                            <p>Recap! Recap! Recap!</p>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <strong>View History Dashboard</strong>
+                            <p>Always useful to take a look back and see how a discussion has evolved!</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!--END FUTURES SLIDE-->
+
+    <!--CONTACT FORM-->
+    <div id="contact-form">
+        <div id="shadowed-contact-form">
+
+            <div class="container">
+
+                <div class="row contact-form-title">
+                    <h1 class="col-md-12 col-lg-12 text-capitalize text-center">contact us</h1>
+                </div>
+                <div class="row contact-form-text">
+                    <p class="col-md-12 col-lg-12 text-center text-capitalize">Contact Rainbow Agenda, If You Have Any Questions Or If You Would Like To</p>
+                    <p class="col-md-12 col-lg-12 text-center text-capitalize">Share Your Feedback! We Will Get Back To You In Both Cases!</p>
+                </div>
+
+                <div class="row contact-form">
+                    <div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+
+                        <div class="row">
+                            <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 first-row-inputs">
+                                <input type="text" placeholder="Name" ng-model="contactFormName">
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 first-row-inputs">
+                                <input type="text" class="col-md-6 col-lg-6 col-sm-12 col-xs-12" placeholder="Email Address" ng-model="contactFormEmail">
+                            </div>
+                        </div>
+                        <div class="row" style="padding-bottom: 20px">
+
+                            <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 subject-input">
+                                <input type="text" class="col-md-6 col-lg-6 col-sm-12 col-xs-12" placeholder="Subject" ng-model="contactFormSubject">
+                            </div>
+
+                        </div>
+                        <div class="row" style="padding-bottom: 20px;">
+
+                            <div class="col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2 message-input">
+                                <textarea class="col-md-6 col-lg-6 col-sm-12 col-xs-12" placeholder="Message" ng-model="contactFormMessage"></textarea>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12 text-center send-btn-container">
+                                <span class="text-uppercase" ng-click="contactUs()">send</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--END CONTACT FORM-->
+
+
+    <!--FOOTER-->
+    <footer id="footer">
+        <div class="row">
+            <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 text-capitalize text-left footer-containers">
+                <img src="pics/logo.png" alt="">
+                <span>rainbow agenda</span>
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 text-capitalize text-center footer-containers">
+                <span>Copyright 2016 Rainbow Agenda</span>
+                <span class="footer-divider">|</span>
+                <span>All Rights Reserved.</span>
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 text-capitalize text-right footer-containers">
+                <span ng-click="goHome()" class="footer-home">Home</span>
+                <span>|</span>
+                <span><a href="#/privacy">Privacy</a></span>
+                <span>|</span>
+                <span><a href="#/terms">Terms & Conditions</a></span>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--END FOOTER-->
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content login-modal {{(loginErrors == true)? 'login-modal-with-errors': return}}" id="login-modal">
+                <i class="fa fa-times fa-2x modal-close-btn pull-right modal-close-btn"  data-dismiss="modal"></i>
+                <div>
+                    <p class="modal-site-name">Rainbow Agenda</p>
+                </div>
+
+                <div>
+                    <p class="modal-form-name">LOGIN</p>
+                </div>
+
+                <div class="input-fields-containers">
+                    <label class="input-inside-text" id="loginEmailLabel"
+                        ng-click="goInsideInput('loginEmailLabel', 'loginEmailInput')">Email Address</label>
+                    <input type="text" id="loginEmailInput"
+                        class="{{(loginEmailError == true)? 'bordered-input': return}}"
+                        ng-click="animateInputs('loginEmailLabel')"
+                        ng-blur="resetInput('loginEmailLabel', 'loginEmailInput')"
+                        ng-model="loginEmail" auto-complete="off"
+                        ng-focus="animateInputs('loginEmailLabel')"
+                        ng-change="loginEmailError = false; animateInputs('loginEmailLabel');animateInputs('loginPasswordLabel')">
+                    <span class="error-img" ng-if="loginEmailError == true"><img src="pics/error-forms.png" alt=""></span>
+                </div>
+
+                <div class="error-containers">
+                    <span  ng-if="loginEmailError == true">{{loginEmailErrorText}}</span>
+                </div>
+
+                <div class="input-fields-containers">
+                    <span class="input-inside-text" id="loginPasswordLabel"
+                          ng-click="goInsideInput('loginPasswordLabel', 'loginPasswordInput')">Password</span>
+                    <input type="password" id="loginPasswordInput"
+                        class="{{(loginPasswordError == true)? 'bordered-input': return}}"
+                        ng-click="animateInputs('loginPasswordLabel')"
+                        ng-blur="resetInput('loginPasswordLabel', 'loginPasswordInput')"
+                        ng-model="loginPassword"
+                        ng-focus="animateInputs('loginPasswordLabel')"
+                        ng-change="loginPasswordError = false;animateInputs('loginPasswordLabel')">
+
+                    <span id="forgot-password-link" class="{{(loginPasswordError == true)? 'add-error-img': return}}"><a href="#/reset-password">Forgot?</a></span>
+
+                    <span class="error-img" ng-if="loginPasswordError == true"><img src="pics/error-forms.png" alt=""></span>
+                </div>
+
+                <div class="error-containers">
+                    <span  ng-if="loginPasswordError == true">{{loginPasswordErrorText}}</span>
+                </div>
+
+                <div id="checkbox-container"  class="{{loginRememberMe == true ? 'checked': return}}">
+                    <div ng-click="loginRememberMe = !loginRememberMe">
+                        <i class="fa fa-check-square-o fa-2x" ng-if="loginRememberMe == true"></i>
+                        <i class="fa fa-square-o fa-2x" ng-if="loginRememberMe == false"></i>
+                    </div>
+                    <div ng-click="loginRememberMe = !loginRememberMe">
+                        <span>Remember Me</span>
+                    </div>
+                </div>
+                <div class="modals-btn-container">
+                    <span ng-click="login()">LOGIN</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--End Login Modal-->
+
+
+    <!--Register Modal-->
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content register-modal {{(registerErrors == true)? 'register-modal-with-errors': return}}" id="register-modal">
+                <i class="fa fa-times fa-2x modal-close-btn pull-right modal-close-btn"  data-dismiss="modal"></i>
+                <div>
+                    <p class="modal-site-name">Rainbow Agenda</p>
+                </div>
+                <div>
+                    <p class="modal-form-name">SIGNUP</p>
+                </div>
+                <div class="input-fields-containers">
+                    <span class="input-inside-text" id="registerFirstNameLabel"
+                          ng-click="goInsideInput('registerFirstNameLabel', 'registerFirstNameInput')">First Name</span>
+                    <input type="text"
+                           id="registerFirstNameInput"
+                           class="{{(registerFirstNameError == true)? 'bordered-input': return}}"
+                           ng-click="animateInputs('registerFirstNameLabel')"
+                           ng-blur="resetInput('registerFirstNameLabel', 'registerFirstNameInput')"
+                           ng-model="registerFirstName"
+                           ng-focus="animateInputs('registerFirstNameLabel')"
+                            ng-change="registerFirstNameError = false">
+                    <span class="error-img" ng-if="registerFirstNameError == true"><img src="pics/error-forms.png" alt=""></span>
+                </div>
+                <div class="error-containers" >
+                    <span ng-if="registerFirstNameError == true">{{registerFirstNameErrorText}}</span>
+                </div>
+                <div class="input-fields-containers">
+                    <span class="input-inside-text" id="registerLastNameLabel"
+                          ng-click="goInsideInput('registerLastNameLabel', 'registerLastNameInput')">Last Name</span>
+                    <input type="text"
+                           id="registerLastNameInput"
+                           class="{{(registerLastNameError == true)? 'bordered-input': return}}"
+                           ng-click="animateInputs('registerLastNameLabel')"
+                           ng-blur="resetInput('registerLastNameLabel', 'registerLastNameInput')"
+                           ng-model="registerLastName"
+                           ng-focus="animateInputs('registerLastNameLabel')"
+                            ng-change="registerLastNameError = false">
+                    <span class="error-img" ng-if="registerLastNameError == true"><img src="pics/error-forms.png" alt=""></span>
+                </div>
+
+                <div class="error-containers">
+                    <span ng-if="registerLastNameError == true">{{registerLastNameErrorText}}</span>
+                </div>
+
+                <div class="input-fields-containers">
+                    <span class="input-inside-text" id="registerEmailLabel"
+                          ng-click="goInsideInput('registerEmailLabel', 'registerEmailInput')">Email Address</span>
+                    <input type="text"
+                           id="registerEmailInput"
+                           class="{{(registerEmailError == true)? 'bordered-input': return}}"
+                           ng-click="animateInputs('registerEmailLabel')"
+                           ng-blur="resetInput('registerEmailLabel', 'registerEmailInput')"
+                           ng-model="registerEmail"
+                           ng-focus="animateInputs('registerEmailLabel')"
+                            ng-change="registerEmailError = false">
+                    <span class="error-img" ng-if="registerEmailError == true"><img src="pics/error-forms.png" alt=""></span>
+
+                </div>
+                <div class="error-containers">
+                    <span  ng-if="registerEmailError == true">{{registerEmailErrorText}}</span>
+                </div>
+
+                <div class="input-fields-containers">
+                    <span class="input-inside-text" id="registerPasswordLabel"
+                          ng-click="goInsideInput('registerPasswordLabel', 'registerPasswordInput')">Password</span>
+                    <input type="password"
+                           id="registerPasswordInput"
+                           class="{{(registerPasswordError == true)? 'bordered-input': return}}"
+                           ng-click="animateInputs('registerPasswordLabel')"
+                           ng-blur="resetInput('registerPasswordLabel', 'registerPasswordInput')"
+                           ng-model="registerPassword"
+                           ng-focus="animateInputs('registerPasswordLabel')"
+                            ng-change="registerPasswordError = false">
+                    <span class="error-img" ng-if="registerPasswordError == true"><img src="pics/error-forms.png" alt=""></span>
+                </div>
+                <div class="error-containers">
+                    <span ng-if="registerPasswordError == true">{{registerPasswordErrorText}}</span>
+                </div>
+                <div class="modals-btn-container register-btn">
+                    <span ng-click="register()">SIGN UP</span>
+                </div>
+            </div>
+        </div>
+    </div> <!--End Register Modal-->
+
+    <!--Reset password Modal-->
+    <div class="modal fade" id="resetPasswordModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content reset-password-modal {{(resetErrors == true)? 'reset-modal-with-errors': return}}" id="reset-password-modal">
+                <i class="fa fa-times fa-2x modal-close-btn pull-right modal-close-btn"  data-dismiss="modal"></i>
+                <div>
+                    <p class="modal-site-name">Rainbow Agenda</p>
+                </div>
+                <div>
+                    <p class="modal-form-name">RESET PASSWORD</p>
+                </div>
+
+                <div class="input-fields-containers">
+                    <span class="input-inside-text" id="resetEmailLabel"
+                          ng-click="goInsideInput('resetEmailLabel', 'resetEmailInput')">Email Address</span>
+                    <input type="text"
+                           id="resetEmailInput"
+                           class="{{(resetEmailError == true)? 'bordered-input': return}}"
+                           ng-click="animateInputs('resetEmailLabel')"
+                           ng-blur="resetInput('resetEmailLabel', 'resetEmailInput')"
+                           ng-model="resetEmail"
+                           ng-focus="animateInputs('resetEmailLabel')"
+                            ng-change="resetEmailError = false;resetErrors == false">
+                    <span class="error-img" ng-if="resetEmailError == true"><img src="pics/error-forms.png" alt=""></span>
+                </div>
+                <div class="error-containers">
+                    <span ng-if="resetEmailError == true">{{resetEmailErrorText}}</span>
+                </div>
+                <div class="modals-btn-container reset-password-btn">
+                    <span ng-click="sendResetEmail() ">Reset password</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End reset password modal-->
+
+    <!--New password modal-->
+    <div class="modal fade" id="newPasswordModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content new-password-modal {{(newPasswordErrors == true)? 'new-password-modal-modal-with-errors': return}}" id="new-password-modal">
+                <i class="fa fa-times fa-2x modal-close-btn pull-right modal-close-btn"  data-dismiss="modal"></i>
+                <div>
+                    <p class="modal-site-name">Rainbow Agenda</p>
+                </div>
+                <div>
+                    <p class="modal-form-name">NEW PASSWORD</p>
+                </div>
+                <div class="input-fields-containers">
+                    <span class="input-inside-text" id="newPasswordNewPasswordLabel"
+                          ng-click="goInsideInput('newPasswordNewPasswordLabel', 'newPasswordNewPasswordInput')">New password</span>
+                    <input type="password"
+                           id="newPasswordNewPasswordInput"
+                           class="{{(newPasswordError == true)? 'bordered-input': return}}"
+                           ng-model="newPassword"
+                           ng-click="animateInputs('newPasswordNewPasswordLabel')"
+                           ng-blur="resetInput('newPasswordNewPasswordLabel', 'newPasswordNewPasswordInput')"
+                           ng-change="newPasswordError = false;newPasswordErrors = false"
+                           ng-focus="animateInputs('newPasswordNewPasswordLabel')">
+                    <span class="error-img" ng-if="newPasswordError == true"><img src="pics/error-forms.png" alt=""></span>
+                </div>
+                <div class="error-containers">
+                    <span  ng-if="newPasswordError == true">{{newPasswordErrorText}}</span>
+                </div>
+
+
+                <div class="input-fields-containers">
+                    <span class="input-inside-text" id="newPasswordRepeatPasswordLabel"
+                          ng-click="goInsideInput('newPasswordRepeatPasswordLabel', 'newPasswordRepeatPasswordInput')">Repeat new password</span>
+                    <input type="password"
+                           id="newPasswordRepeatPasswordInput"
+                           class="{{(confirmNewPasswordError == true)? 'bordered-input': return}}"
+                           ng-model="repeatNewPassword"
+                           ng-click="animateInputs('newPasswordRepeatPasswordLabel')"
+                           ng-blur="resetInput('newPasswordRepeatPasswordLabel', 'newPasswordRepeatPasswordInput')"
+                           ng-change="confirmNewPasswordError = false;newPasswordErrors = false"
+                           ng-focus="animateInputs('newPasswordRepeatPasswordLabel')">
+                    <span class="error-img" ng-if="confirmNewPasswordError == true"><img src="pics/error-forms.png" alt=""></span>
+                </div>
+                <div class="error-containers">
+                    <span  ng-if="confirmNewPasswordError == true">{{confirmNewPasswordErrorText}}</span>
+                </div>
+                <div class="modals-btn-container new-password-btn">
+                    <span ng-click="resetPassword()">Reset password</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End New password modal-->
+</div>

@@ -1,0 +1,170 @@
+#meeting-notes-container {
+	margin-top: 30px;
+}
+#meeting-notes-container header {
+	padding: 0px;
+	margin:0px;
+}
+#meeting-notes-container header h3 {
+	padding: 0px;
+	padding-bottom: 5px;
+	margin: 0px;
+	margin-left: 15px;
+	text-align: left;
+	font-size: 16px;
+	font-weight: bold;
+}
+#meeting-notes-nav {
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 20px;
+	padding-bottom: 5px;
+}
+#meeting-notes-nav div {
+	font-size: 14px;
+}
+#meeting-notes-nav div:first-child {
+	text-align: center;
+}
+.meeting-agenda-items-in-notes {
+	margin-right: 0px;
+	margin-left: 0px;
+	padding: 20px 0 20px 18px;
+	font-size: 15px;
+	background-color: rgb(250, 250, 250);
+	border: none;
+	border-bottom: 1px solid rgb(235, 238, 238);
+	border-top: 1px solid rgb(235, 238, 238);
+}
+.meeting-agenda-items-in-notes span {
+	display: inline-block;
+	vertical-align: middle;
+	white-space: pre-line;
+	word-wrap: break-word;
+}
+.meeting-agenda-items-in-notes span:nth-child(2) {
+	max-width: calc(100% - 50px);
+}
+.numbers {
+	display: inline-block;
+	padding-right: 20px;
+}
+.new-agenda-item-in-notes {
+	font-size: 15px;
+	line-height: 60px;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+.new-agenda-item-in-notes div {
+	padding: 0px;
+}
+.note-type-container,
+.new-note-number {
+	display: inline-block;
+}
+.new-note-number,
+.note-number{
+	padding-left: 15px !important;
+}
+.note-type-container {
+	float: right;
+	width: 60%;
+}
+#noteTypeDropdownItems {
+	width: 100%;
+	margin-top: -8px;
+	border: none;
+	padding: 0px;
+}
+#noteTypeDropdownItems li {
+	padding: 5px 15px;
+	border-bottom: 1px solid rgb(235, 238, 238);
+	line-height: 30px;
+}
+#noteTypeDropdownItems li:hover {
+	background-color: rgb(36, 36, 255);
+	color: white;
+}
+#newAgendaNoteBodyContainer input,
+#newAgendaNoteOwnerContainer input{
+	border: none;
+	width: 100%;
+}
+#newAgendaNoteOwnerContainer ul,
+.note-owner-container ul{
+	padding: 0px;
+	margin: 0px;
+}
+#newAgendaNoteOwnerContainer ul li,
+.note-owner-container ul li{
+	padding: 0px;
+	line-height: 30px;
+}
+#newAgendaNoteOwnerContainer ul li a,
+.note-owner-container ul li a{
+	line-height: 30px;
+}
+.dropdown-menu .active > a,
+.dropdown-menu .active > a:hover {
+	background-color: rgb(36, 36, 255);
+	font-size: 14px;
+}
+.agenda-notes-item {
+	line-height: 60px;
+	border-bottom: 1px solid rgb(235, 238, 238);
+	margin-left: 0px;
+	margin-right: 0px;
+}
+.agenda-notes-item div {
+	padding: 0px;
+}
+.note-number {
+	display: inline-block;
+	font-size: 14px;
+}
+
+.note-owner-container i{
+	font-size: 20px;
+	color: #999999;
+}
+.note-owner-container i:hover {
+	cursor: pointer;
+}
+.note-owner-container div {
+	display: inline-block;
+}
+.note-owner-container div:first-child input {
+	width: 100%;
+	font-size: 14px;
+	border: none;
+}
+.note-owner-container div:nth-child(2) {
+	padding-left: 5px;
+}
+.notes-body-container {
+    text-align: center;
+}
+.notes-body-container textarea {
+	width: 98%;
+	line-height: 16px;
+	font-size: 15px;
+	vertical-align: middle;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    resize: none !important;
+}
+.notes-body-container textarea:focus {
+    outline: none;
+}
+.notes-body-container span {
+	display: block;
+	max-width: 100%;
+	word-wrap: break-word;
+	line-height: 1.3em;
+	font-size: 14px;
+	padding: 20px 15px;
+	text-align: left;
+}

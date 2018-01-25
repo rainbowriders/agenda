@@ -1,0 +1,57 @@
+<section class="container" id="meeting-headers-container">
+    <header>
+        <section id="meeting-title">
+            <input type="text"
+                   ng-model="template.title"
+                   class="col-md-12 meeting-title"
+                   ng-blur="updateTemplateTitle()"
+                   focus="true"
+                   placeholder="Type meeting title"
+            >
+        </section>
+    </header>
+    <section id="meeting-content">
+        <section id="meeting-date-place-container">
+            <div class="col-md-12">
+                <input type="text" id="meeting-place-title"
+                    ng-model="template.place"
+                    placeholder="Type meeting place"
+                       ng-blur="updateTemplatePlace()">
+            </div> <!-- #meeting-date-place-container first div-->
+        </section> <!-- #meeting-date-place-container -->
+        <section id="inner-meeting-data-container">
+            <div>
+                <h3 id="owner-title">Owner</h3>
+            </div>
+            <section id="meeting-minute-taker">
+                <input type="text"
+                ng-model="template.minute_taker"
+                ng-blur="updateMinutetaker()">
+            </section>
+            <section id="meeting-attendees">
+                <h3>Attendees</h3>
+                <tags-input class="bootstrap" id="tags-input"
+                ng-model="attendants"
+                ng-blur="updateAttendants()"
+                display-property="meeting_attendant"
+                placeholder="Type e-mail to add new attendee. At the end, press enter, space or type comma to insert it."
+                replace-spaces-with-dashes="false"
+                add-on-space="true"
+                add-on-comma="true">
+                <auto-complete source="loadUserContacts($query)"
+                min-length="0"
+                debounce-delay="0"
+                load-on-focus="true"
+                load-on-empty="false"></auto-complete>
+                </tags-input>
+            </section>
+            <section ng-include="'views/partials/template-agenda.html'" id="meeting-agenda-container">
+
+            </section>
+        </section> <!--inner-meeting-data-container-->
+        <section ng-include="'views/partials/template-footer.html'" id="template-footer-container">
+
+        </section>
+    </section> <!-- #meeting-content -->
+
+</section>

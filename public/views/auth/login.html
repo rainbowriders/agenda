@@ -1,0 +1,71 @@
+<div class="forms-image-background" ng-controller="LoginController">
+	<div class="forms-shadowed-background">
+		<div class="container container-with-padding">
+			<div class="row">
+				<div class="redirect-to-register-msg">
+					<h3><a href="#/register" class="new-text">New to Rainbow Agenda? <span class="sign-up-text">Sign up</span></a></h3>
+				</div>
+			</div>
+			<div class="row">
+				<form ng-submit="login()">
+					<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 form-container animated fadeInDown">
+						<div class="row">
+							<h3 class="col-md-12 col-lg-12 col-sm-12 col-xs-12 text-center">Log in to Rainbow Agenda</h3>
+						</div>
+						<div class="row">
+							<div class="col-md-12 col-lg-12 col-xs-12 col-sm-12 inputs-container">
+								<input type="text" name="loginEmail" id="loginEmail" class="{{errors.loginEmail == true ? 'input-with-errors': ''}}"
+									   ng-click="animateInputs('loginEmailLabel', 'loginEmail')"
+									   ng-blur="resetInputs('loginEmailLabel', 'loginEmail')"
+									   ng-focus="animateInputs('loginEmailLabel', 'loginEmail')"
+									   ng-model="userLoginData.email"
+									   ng-change="errors.loginEmail = false"  focus="true">
+								<label for="loginEmail" id="loginEmailLabel">E-mail</label>
+								<span class="input-error-message" ng-if="errors.loginEmail == true">{{errorsText.loginEmailError}}</span>
+							</div>
+							<div class="col-md-12 col-lg-12 col-xs-12 col-sm-12 inputs-container">
+								<input type="password" name="loginPassword" id="loginPassword" class="{{errors.loginPassword == true ? 'input-with-errors': ''}}"
+									   ng-click="animateInputs('loginPasswordLabel', 'loginPassword')"
+									   ng-blur="resetInputs('loginPasswordLabel', 'loginPassword')"
+									   ng-focus="animateInputs('loginPasswordLabel', 'loginPassword')"
+									   ng-model="userLoginData.password"
+									   ng-change="errors.loginPassword = false">
+								<label for="loginPassword" id="loginPasswordLabel">Password</label>
+								<span class="login-forgot-password {{errors.loginPassword == true? 'login-forgot-password-with-errors': ''}}"><a href="#/reset-password">Forgot?</a></span>
+								<span class="input-error-message" ng-if="errors.loginPassword == true">{{errorsText.loginPasswordError}}</span>
+							</div>
+							<div class="col-md-12 col-lg-12 col-xs-12 col-sm-12 inputs-container">
+								<i class="fa fa-square-o fa-2x" ng-if="userLoginData.checkboxValue == false" ng-click="checkRememberMe()"></i>
+								<i class="fa fa-check-square-o fa-2x" ng-if="userLoginData.checkboxValue == true" ng-click="checkRememberMe()"></i>
+								<span class="label-check-box-login" ng-click="checkRememberMe()">Remember Me</span>
+							</div>
+							<div class="col-md-12 col-lg-12 col-xs-12 col-sm-12 inputs-container">
+								<button class="btn" type="submit" id="login-btn">Log in</button>
+							</div>
+
+							<div class="social-login" >
+								<span class="btn btn-default btn-google" ng-controller="GoogleAuthController" ng-click="googleLogin()">
+									<i class="fa fa-google-plus fa-2x" aria-hidden="true"></i><span> Log in with Google</span>
+								</span>
+							</div>
+
+							<div class="social-login" >
+								<span class="btn btn-default btn-facebook" ng-controller="FacebookAuthController" ng-click="facebookLogin()">
+									<i class="fa fa-facebook fa-2x" aria-hidden="true"></i><span> Log in with Facebook</span>
+								</span>
+							</div>
+
+							<div class="social-login" >
+								<span class="btn btn-default btn-linkedin" ng-controller="LinkedAuthController" ng-click="linkedinLogin()">
+									<i class="fa fa-linkedin fa-2x" aria-hidden="true"></i><span> Log in with LinkedIn</span>
+								</span>
+							</div>
+
+						</div>
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+</div>

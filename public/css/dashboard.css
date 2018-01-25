@@ -1,0 +1,104 @@
+#dashboard-container header {
+	margin-top: 70px;
+	padding: 40px 0;
+}
+#dashboard-container header h1 {
+	font-size: 40px;
+	margin: 0 0;
+	padding: 0;
+}
+#dashboard-title {
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	font-size: 42px;
+}
+
+#dashboard-search-container {
+	padding: 15px;
+	margin: 0px;
+	background-color: #FAFAFA;
+	border: 1px solid rgb(235, 238, 238);
+}
+#search-field, #search-criteria-btns {
+	padding: 0px;
+	margin: 0px;
+}
+@media screen and (max-width: 1005px){
+	#search-field {
+		margin-bottom: 10px;
+	}
+}
+#search-field input{
+	height: 40px;
+	border: 1px solid rgb(235, 238, 238);
+	font-size: 15px;
+	color: #666666;
+	background-image: url("../pics/search-icon.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-position: 98%;
+}
+#search-criteria-btns {
+	padding-left: 15px;
+	text-align: right;
+}
+#search-criteria-btns span {
+	display: inline-block;
+	font-size: 15px;
+	background-color: white;
+	border: 1px solid rgb(235, 238, 238);
+	padding: 9px 30px ;
+}
+#search-criteria-btns span:nth-child(2){
+	margin-left: -5px;
+}
+#search-criteria-btns span:hover {
+	cursor: pointer;
+}
+#search-criteria-btns span.active-btn {
+	background-color: rgb(102, 102, 102);
+	color: white;
+	border: 1px solid rgb(102, 102, 102);
+}
+#dashboard-meetings-container {
+	padding: 15px;
+	padding-bottom: 70px;
+	background-color: white;
+	margin-left: 0px;
+	margin-right: 0px;
+	border: 1px solid rgb(235, 238, 238);
+	border-top: none;
+}
+.dashboard-meeting-container {
+	padding: 15px;
+}
+.dashboard-meeting-container:hover {
+	cursor: pointer;
+}
+.dashboard-meeting-container:nth-child(odd) {
+	background-color: #FAFAFA;
+	border: 1px solid rgb(235, 238, 238);
+}
+.dashboard-meeting-container p {
+	margin: 0px;
+	padding: 0;
+}
+.dashboard-meeting-container p.meeting-title {
+	font-size: 20px;
+	color: #333333;
+}
+.dashboard-meeting-container p.meeting-date-time-place-info {
+	font-size: 14px;
+	color: #666666;
+}
+.dashboard-meeting-container p.meeting-date-time-place-info span {
+	display: inline-block;
+	margin-right: 10px;
+}
+.dashboard-meeting-container p.meeting-users {
+	font-size: 14px;
+	color: #333333;
+}

@@ -1,0 +1,54 @@
+<nav class="navbar navbar-default navbar-fixed-top" ng-controller="NavbarController">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#/dashboard">
+				<img src="pics/logo.png">
+				<span>Rainbow Agenda</span>
+			</a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse in" aria-expanded="true">
+			<ul class="nav navbar-nav">
+				<li id="new-meeting-button" ng-click="createNewMeeting()" ng-if="!showNewTemplateBtn"><i class="fa fa-plus-square"></i>plan new meeting</li>
+				<li id="new-meeting-button" ng-click="createTemplate()" ng-if="showNewTemplateBtn"><i class="fa fa-plus-square"></i>create new template</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right" >
+				<li id="navbar-right-dropdown" class="dropdown" style="background-color: white !important;">
+					<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+						<img src="pics/user-avatar.png" id="navbar-user-avatar">
+						<span id="navbar-user-names">{{userFirstName}} {{userLastName}}</span>
+						<img src="pics/chafka.png" id="chafka">
+						<ul class="dropdown-menu">
+							<li ng-if="showDashboardMenuItem" class="{{showDashboardMenuItem ? 'padded-navbar-dropdown-item' : return}}">
+								<a href="#/dashboard">
+									<i class="fa fa-tachometer"></i>
+									<span>Dashboard</span>
+								</a>
+							</li>
+							<li ng-if="showTemplatesMenuItem" class="{{(showTemplatesMenuItem && !showDashboardMenuItem) ? 'padded-navbar-dropdown-item' : return}}">
+								<a href="#/templates">
+									<i class="fa fa-sticky-note" ></i>
+									<span>Templates</span>
+								</a>
+							</li>
+							<li>
+								<a href="/" ng-click="logout()">
+									<i class="fa fa-sign-out"></i>
+									<span>Log out</span>
+								</a>
+							</li>
+						</ul>
+					</a>
+				</li>
+				<li ng-click="openHelpPageModal()" id="navbar-help-page-icon">
+					<img src="pics/help-page-icon.png"  >
+				</li>
+			</ul>
+		</div><!--/.nav-collapse -->
+	</div>
+</nav>

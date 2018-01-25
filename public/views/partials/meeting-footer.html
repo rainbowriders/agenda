@@ -1,0 +1,7 @@
+<div>
+    <button  ng-click="sendInvities()" ng-if="meeting.attendants.length > 1" ng-show="userIsOwner">Send invites</button>
+    <button  ng-click="fileTheMeeting()" ng-show="userIsOwner">Send minutes as email</button>
+    <button  ng-click="print()">Print</button>
+    <button  ng-click="deleteMeeting()" ng-show="userIsOwner">Delete</button>
+</div>
+

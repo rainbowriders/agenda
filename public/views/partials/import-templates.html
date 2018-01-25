@@ -1,0 +1,36 @@
+<div class="modal-content" style="background-color: white">
+    <div class="modal-header ng-scope">
+        <h2 class="modal-title" style="color: #666666; font-size: 24px;">Create new meeting</h2>
+    </div>
+    <div class="modal-body ng-scope">
+
+        <h3 class="text-muted" style="font-size: 18px; color: #999999" ng-if="templates.length > 0">Templates</h3>
+        <p class="text-danger text-center" style="font-size: 16px;" ng-if="!isTemplateChoosen">Please choose a template</p>
+        <div id="dashboard-meetings-container" class="row" style="border: none !important; height: 300px; overflow-y: auto" ng-if="templates.length > 0">
+            <div class="col-md-12 dashboard-meeting-container {{ chooseId == template.uniqueStringID ? 'selected' : ''}} popup-container"
+                 ng-repeat="template in templates | orderBy:'-date'"
+                 ng-click="setTemplate(template.uniqueStringID)">
+                <p class="meeting-title">{{template.title || 'Untitled template'}}</p>
+                <p class="meeting-date-time-place-info">
+                    <span>@{{template.place || 'No chosen place'}}</span>
+                </p>
+                <p class="meeting-users">
+                    <span><strong>{{template.minute_taker}}</strong></span><span ng-if="template.attendants.length > 0">, </span>
+            <span ng-repeat="att in template.attendants" ng-if="template.minute_taker_email != att.email">
+                {{att.meeting_attendant}}
+                <span ng-if="!$last">,</span>
+            </span>
+                </p>
+            </div>
+        </div>
+        <div ng-if="templates.length == 0">
+            <h3 style="font-size: 18px; color: #999999">You don't have any templates created yet</h3>
+        </div>
+    </div>
+    <div class="modal-footer ng-scope">
+        <button class="btn btn-success" type="button" ng-click="createTemplate()" ng-if="templates.length == 0">Create your first template</button>
+        <button class="btn btn-success" type="button" ng-click="createFromTemplate()" ng-if="templates.length > 0">Create from template</button>
+        <button class="btn btn-default" type="button" ng-click="createFromScratch()">Create from scratch</button>
+        <button class="btn btn-danger" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+</div>

@@ -1,0 +1,76 @@
+<section class="container-fluid print-page-container">
+	<table class="table responsive print-header-table" wt-responsive-table="">
+		<thead>
+			<tr>
+				<th colspan="2">Meeting info:</th>
+			</tr>
+			<tr>
+				<th>Meeting title:</th>
+				<th>{{meeting.title}}</th>
+			</tr>
+			<tr>
+				<th>Meeting date:</th>
+				<th>{{meeting.date | date: 'dd.MM.yyyy'}}</th>
+			</tr>
+			<tr>
+				<th>Meeting place:</th>
+				<th>{{meeting.place}}</th>
+			</tr>
+			<tr>
+				<th>Minute taker:</th>
+				<th><span>{{meeting.minute_taker_first_name }} </span><span>{{meeting.minute_taker_last_name}} </span><span>&lt;{{meeting.minute_taker_email}}&gt;</span> </th>
+			</tr>
+			<tr>
+				<th>Attendees:</th>
+				<th>
+					<span ng-repeat="att in meeting.attendants">
+						<span>{{att.first_name}} </span>
+						<span>{{att.last_name}} </span>
+						<span>&lt;{{att.email}}&gt;; </span>
+					</span>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+	<table class="table responsive print-body-table" wt-responsive-table="">
+		<tbody>
+			<tr>
+				<td colspan="4"><strong>About this meeting/Agenda</strong></td>
+			</tr>
+			<tr ng-repeat="agg in meeting.agenda" class="print-agenda-items" id="{{$last ? 'last-note': ''}}">
+				<td >{{agg.number}}.</td>
+				<td colspan="3">{{agg.text}}</td>
+			</tr>
+			<tr>
+				<td colspan="4" style="padding-top: 30px;"><strong>Meeting minutes</strong></td>
+			</tr>
+			<tr class="print-note-header">
+				<td></td>
+				<td><strong>Type</strong></td>
+				<td><strong>Note</strong></td>
+				<td><strong>Owner</strong></td>
+			</tr>
+			<tr ng-repeat-start="agenda in meeting.agenda">
+    			<td colspan="4" class="print-notes-agenda-title"><strong>{{agenda.number}}. {{agenda.text}}</strong></td>
+    		</tr>
+			<tr ng-repeat-start="note in agenda.note" class="{{getBackgroundColorPPNotes($index)}}" id="{{$last ? 'last-note': ''}}">
+				<td>{{agenda.number}}.{{$index}}</td>
+				<td style="color:{{getTypeDropDownColor(note.type.title)}}!important;">
+					{{note.type.title}}
+				</td>
+				<td>
+					{{note.body}}
+				</td>
+				<td>
+					{{note.ownerNames}}
+				</td>
+			</tr>
+			<tr ng-repeat-end>
+			</tr>
+			<tr ng-repeat-end>
+			</tr>
+		</tbody>
+	</table>
+</section>

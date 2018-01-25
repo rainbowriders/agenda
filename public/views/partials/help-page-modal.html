@@ -1,0 +1,52 @@
+<div class="modal-content" style="background-color: white; width: inherit;">
+        <div class="modal-header ng-scope">
+        	<section id="forms-logo-container" class="text-center m-b">
+				<img src="../../pics/rr-circle-logo.png" style="height:50px;margin-right:10px;vertical-align: middle">
+				<span style="color:#788188; font-size: 18px;vertical-align: middle">Rainbow Agenda</span>
+			</section>
+            <span class="modal-title text-muted" style="font-size: 14px;">Contact Rainbow Agenda, if you have any questions or if you would like to share your feedback! We will get back to you in both cases!</span>
+        </div>
+        <div class="modal-body ng-scope">
+        	<form name="sendMessageForm" ng-submit="sendMessage()">
+	            <div class="form-group">
+	            	<input type="text" class="form-control" 
+	            	placeholder="Name" 
+	            	ng-model="name" 
+	            	name="name" 
+	            	required>
+	            	<small class="text-danger"  style="display:block;" ng-show="sendMessageForm.name.$dirty && sendMessageForm.name.$error.required">Required!</small>
+	            </div>
+	            <div class="form-group">
+	            	<input type="email" class="form-control" 
+	            	placeholder="Email" 
+	            	ng-model="email" 
+	            	name="email" 
+	            	required 
+	            	ng-pattern="/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/" >
+	            	<small style="display:block;" class="text-danger" ng-show="sendMessageForm.email.$invalid && sendMessageForm.email.$dirty">Invalid email adress!</small>
+					<small class="text-danger"  style="display:block;" ng-show="sendMessageForm.email.$dirty && sendMessageForm.email.$error.required">Required!</small>
+	            </div>
+	            <div class="form-group">
+	            	<input type="text" class="form-control" 
+	            	placeholder="Subject" 
+	            	ng-model="subject"
+	            	required
+	            	name="subject">
+	            	<small class="text-danger"  style="display:block;" ng-show="sendMessageForm.subject.$dirty && sendMessageForm.subject.$error.required">Required!</small>
+	            </div>
+	            <div class="form-group">
+	            	<textarea rows="5" class="form-control" 
+	            	placeholder="Text" 
+	            	ng-model="text"
+	            	required
+	            	name="text">
+	            	</textarea>
+    				<small class="text-danger"  style="display:block;" ng-show="sendMessageForm.text.$dirty && sendMessageForm.text.$error.required">Required!</small>
+	            </div>
+	        </div>
+	        <div class="modal-footer ng-scope">
+	            <button class="btn btn-success" type="button" ng-click="sendMessage()">Send message</button>
+	            <button class="btn btn-danger" type="button" ng-click="cancel()">Cancel</button>
+	        </div>
+        </form>
+    </div>

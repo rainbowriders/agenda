@@ -1,0 +1,38 @@
+<section ng-controller="DashboardController" id="dashboard-container">
+	<header>
+		<h1 id="dashboard-title">DASHBOARD</h1>
+	</header>
+	<section class="row" id="dashboard-search-container">
+		<section id="search-field" class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+			<input type="search" class="col-md-12 col-lg-12 col-sm-12 col-xs-12" placeholder="Search by attendees' names, meeting title, date, location. Fx. '12.11.2015'"
+				   ng-model="searchPattern" ng-change="search()">
+		</section>
+		<seaction class="col-md-6 col-lg-6 col-sm-12 col-xs-12" id="search-criteria-btns">
+			<span class="{{filterBtns.own == true? 'active-btn': return}}"
+			  	ng-model="filterBtns.own"
+			  	ng-click="loadMeetingsWithFilters('own')">My own meetings</span>
+			<span class="{{filterBtns.attendant == true? 'active-btn': return}}"
+				ng-model="filterBtns.attendant"
+				ng-click="loadMeetingsWithFilters('attendant')">Meetings which I attended</span>
+		</seaction>
+	</section>
+	<div id="dashboard-meetings-container" class="row">
+		<div class="col-md-12 dashboard-meeting-container"
+			 ng-repeat="meeting in meetings | orderBy:'-date'"
+			 ng-click="openMeeting(meeting.uniqueStringID)">
+			<p class="meeting-title">{{meeting.title}}</p>
+			<p class="meeting-date-time-place-info">
+				<span>{{meeting.date | date: 'dd.MM.yyyy'}}</span>
+				<span>{{meeting.start_time |date: 'hh:mm'}} - {{meeting.end_time |date: 'hh:mm'}}</span>
+				<span>@{{meeting.place}}</span>
+			</p>
+			<p class="meeting-users">
+				<span><strong>{{meeting.minute_taker}}</strong></span><span ng-if="meeting.attendants.length > 0">, </span>
+				<span ng-repeat="att in meeting.attendants">
+					{{att.meeting_attendant}}
+					<span ng-if="!$last">,</span>
+				</span>
+			</p>
+		</div>
+	</div>
+</section>

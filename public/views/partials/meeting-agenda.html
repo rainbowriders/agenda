@@ -1,0 +1,25 @@
+<header>
+	<h3>Agenda</h3>
+</header>
+<div id="agenda-items">
+	<div ng-repeat="agenda in meeting.agenda | orderBy" class="row colored-background-agenda-item agenda-items" style="white-space: normal !important;">
+		<span >{{$index + 1}}.</span>
+		<input type="text"
+		ng-model="agenda.text"
+		ng-blur="updateMeetingAgenda(agenda)"
+		ng-focus="stopInterval()"
+		ng-click="stopInterval()"
+		ng-if="agendaInEditMode[agenda.id] == true"
+		id="agenda-in-edit-mode-{{agenda.id}}">
+		<span ng-bind-html="agenda.text | linky:'_blank'" ng-click="editAgenda(agenda)"
+		ng-show="agendaInEditMode[agenda.id] == false || agendaInEditMode[agenda.id] == undefined " class="agenda-item-clickable-item"></span>
+		<i class="fa fa-times" ng-click="deleteMeetingAgenda(agenda)"></i>
+	</div>
+	<div class="row colored-background-agenda-item" id="new-meeting-agenda-input">
+		<span >{{meeting.agenda.length + 1}}.</span>
+		<input type="text"
+			   ng-model="newAgendaItem"
+			   placeholder="Type here to add a new item to the agenda"
+			   ng-keypress="createNewMeetingAgendaItem($event, newAgendaItem)">
+	</div>
+</div>

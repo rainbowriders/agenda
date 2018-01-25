@@ -1,0 +1,55 @@
+{
+  "name": "angular-extend-promises",
+  "version": "1.0.0-rc.3",
+  "authors": [
+    "L.systems SARL",
+    "Etienne Folio <etienne.folio@lsystems.fr>",
+    "Quentin Raynaud <quentin.raynaud@lsystems.fr>"
+  ],
+  "description": "Extend $q to make it look a lot more like bluebird",
+  "keywords": [
+    "angular",
+    "promises",
+    "promise",
+    "angularjs",
+    "ng",
+    "extend",
+    "extended",
+    "q",
+    "$q",
+    "defer",
+    "deferred",
+    "bluebird",
+    "async",
+    "util",
+    "utils",
+    "delay",
+    "map",
+    "reduce",
+    "decorator"
+  ],
+  "main": "angular-extend-promises.js",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/lsystems/angular-extend-promises",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/lsystems/angular-extend-promises"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": ">=1.2"
+  },
+  "devDependencies": {
+    "angular1.3": "angular#~1.3",
+    "angular-mocks1.3": "angular-mocks#~1.3",
+    "angular1.2": "angular#~1.2",
+    "angular-mocks1.2": "angular-mocks#~1.2"
+  }
+}

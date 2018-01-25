@@ -1,0 +1,128 @@
+<section class="container" id="meeting-headers-container">
+    <header>
+        <section id="meeting-title">
+            <input type="text"
+                   ng-model="meeting.title"
+                   class="col-md-12 meeting-title"
+                   ng-blur="updateMeetingTitle()"
+                   focus="true"
+                   placeholder="Type meeting title"
+                   ng-disabled="!userIsMinuteTaker"
+                   ng-focus="stopInterval()"
+                   ng-click="stopInterval()"
+                   ng-if="userIsMinuteTaker"
+            >
+            <span class="col-md-12 meeting-title" ng-if="!userIsMinuteTaker">{{meeting.title || 'Untitled meeting'}}</span>
+        </section>
+    </header>
+    <section id="meeting-content">
+        <section id="meeting-date-place-container">
+            <div class="col-md-12">
+                <span type="text" class="show-date-time-title" id="show-start-date-picker"
+                ng-click="showCalendar()">{{meeting.date | date: 'dd.MM.yyyy'}}
+                </span>
+                <div class="date-picker" ng-if="showDatePicker === true">
+                    <uib-datepicker ng-model="meeting.date" show-weeks="true" class="well well-sm" ng-change="setDate()" starting-day="1"></uib-datepicker>
+                </div>
+                <div id="start_time_dropdown-container">
+                    <input type="text" ng-model="start_time_to_string" ng-click="showStartPicker();stopInterval()" id="start_time_dropdown_input"
+                        ng-blur="(showStartTimePicker == true)? return: setStartTime(start_time_to_string)"
+                        ng-keypress="showStartTimePicker = false"
+                        ng-focus="stopInterval()">
+                    <ul ng-show="showStartTimePicker == true">
+                        <li ng-repeat="hour in start_time_drop_down_hour_values"
+                            ng-click="setStartTime(hour)">{{hour | date: 'HH:mm'}}</li>
+                    </ul>
+                </div>
+                <span style="margin-left: -5px">-</span>
+                </span>
+                <div id="end_time_dropdown-container">
+                    <input type="text" ng-model="end_time_to_string" ng-click="stopInterval();showEndPicker(); end_time_drop_down_values()" id="end_time_dropdown_input"
+                           ng-blur="(showEndTimePicker == true)? return: setEndTime(end_time_to_string)"
+                           ng-keypress="showEndTimePicker = false"
+                           ng-focus="stopInterval()">
+                    <ul ng-show="showEndTimePicker == true">
+                        <li ng-repeat="hour in end_time_drop_down_hour_values"
+                            ng-click="setEndTime(hour.time)">{{hour.time | date: 'HH:mm'}} ( {{hour.viewHour}} )</li>
+                    </ul>
+                </div>
+                <!--<span type="text" class="show-date-time-title" id="show-end-date-picker"-->
+                      <!--ng-click="showEndDateCalendar()">{{meeting.end_date | date: 'dd.MM.yyyy'}}-->
+                <!--</span>-->
+                <!--<div class="date-picker" ng-if="showEndDatePicker === true">-->
+                    <!--<uib-datepicker ng-model="meeting.end_date" show-weeks="true" class="well well-sm" ng-change="setEndDate()" starting-day="1"></uib-datepicker>-->
+                <!--</div>-->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" id="time-zone-dropdown-btn" ng-click="showTimeZonePicker()">{{chosenTimeZone.name | limitTo: 11}}
+                        <span class="caret" id="time-zone-dropdown-link"></span>
+                    </button>
+                    <ul id="time-zone-dropdown" ng-if="showTimeZoneDD == true">
+                        <li ng-repeat="zone in timeZones" ng-click="changeTimeZone(zone);showTimeZonePicker()">{{zone.name}}</li>
+                    </ul>
+                </div>
+                <span id="at-place-holder" ng-hide="!meeting.place && !userIsMinuteTaker">@</span>
+                <input type="text" id="meeting-place-title"
+                    ng-model="meeting.place"
+                    placeholder="Type meeting place"
+                    ng-blur="updateMeetingPlace()"
+                    ng-disabled="!userIsMinuteTaker"
+                    ng-focus="stopInterval()"
+                    ng-click="stopInterval()"
+                    ng-hide="!meeting.place && !userIsMinuteTaker">
+            </div> <!-- #meeting-date-place-container first div-->
+        </section> <!-- #meeting-date-place-container -->
+        <section id="inner-meeting-data-container">
+            <div>
+                <h3 id="owner-title">Owner</h3>
+            </div>
+            <section id="meeting-minute-taker">
+                <input type="text"
+                ng-model="meeting.minute_taker"
+                ng-blur="updateMinutetaker()"
+                ng-disabled="!userIsOwner"
+                ng-focus="stopInterval()"
+                ng-click="stopInterval()" ng-if="userIsMinuteTaker || userIsOwner">
+                <span ng-if="!userIsMinuteTaker && !userIsOwner">{{meeting.minute_taker}}</span>
+            </section>
+            <section id="meeting-attendees" ng-show="userIsMinuteTaker || userIsOwner">
+                <h3>Attendees</h3>
+                <tags-input class="bootstrap" id="tags-input"
+                ng-model="attendants"
+                display-property="meeting_attendant"
+                placeholder="Type e-mail to add new attendee. At the end, press enter, space or type comma to insert it."
+                replace-spaces-with-dashes="false"
+                ng-blur="updateAttendants()"
+                ng-disabled="!userIsOwner && !userIsMinuteTaker"
+                ng-focus="stopInterval()"
+                ng-click="stopInterval()"
+                add-on-space="true"
+                add-on-comma="true">
+                <auto-complete source="loadUserContacts($query)"
+                min-length="0"
+                debounce-delay="0"
+                load-on-focus="true"
+                load-on-empty="false"></auto-complete>
+                </tags-input>
+            </section>
+            <section id="meeting-attendees" ng-show="!userIsMinuteTaker && !userIsOwner">
+                <h3>Attendees</h3>
+                <div id="attendees-attendant-view">
+                    <span ng-repeat="attendant in attendants" class="single-text-att">{{attendant.meeting_attendant}}<span ng-hide="$last">,</span> </span>
+                </div>
+            </section>
+            <section ng-include="'views/partials/meeting-agenda.html'" id="meeting-agenda-container">
+
+            </section>
+            <section ng-include="'views/partials/meeting-notes.html'" id="meeting-notes-container">
+
+            </section>
+        </section> <!--inner-meeting-data-container-->
+        <section ng-include="'views/partials/meeting-footer.html'" id="meeting-footer-container">
+
+        </section>
+    </section> <!-- #meeting-content -->
+
+</section>
+<section ng-include="'views/partials/meeting-print-page.html'">
+
+</section>
